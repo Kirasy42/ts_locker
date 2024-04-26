@@ -29,7 +29,7 @@ local function getEndTime(time)
 end
 
 local function getPlayerMoney(src)
-    if TS.Framwork == 'qbx' then
+    if TS.Framework == 'qbx' then
         local player = exports.qbx_core:GetPlayer(src)
         return player.PlayerData.money['bank']
     elseif TS.Framework == 'qb' then
@@ -57,7 +57,7 @@ lib.callback.register('ts_locker:server:rentLocker', function(source, data)
     if not id then
         return TS.STATUS.FAILED_SQL
     else
-        if TS.Framwork == 'qbx' then
+        if TS.Framework == 'qbx' then
             local player = exports.qbx_core:GetPlayer(source)
             player.Functions.RemoveMoney('bank', data.price)
         elseif TS.Framework == 'qb' then
